@@ -1,0 +1,24 @@
+{
+    "name": "yiidoc/yii2-timeago",
+    "description": "The Gii extension for the Yii framework",
+    "keywords": ["yii", "gii", "code generator"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiidoc/yii2-timeago/issues",
+        "source": "https://github.com/yiidoc/yii2-timeago"
+    },
+    "authors": [
+        {
+            "name": "Nghia Nguyen",
+            "email": "yiidevelop@gmail.com",
+            "homepage": "http://yiidev.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {"yii\\timeago\\": ""}
+    }
+}
