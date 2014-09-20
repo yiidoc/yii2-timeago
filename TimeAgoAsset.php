@@ -12,11 +12,12 @@ namespace yii\timeago;
  * @author Nghia Nguyen <yiidevelop@hotmail.com>
  * @since 2.0
  */
-class TimeAgoAsset extends \yii\web\AssetBundle
-{
-    public $sourcePath = '@vendor/yiidoc/yii2-timeago/assets';
-    public $js = ['js/jquery.timeago.js'];
+class TimeAgoAsset extends \yii\web\AssetBundle {
+
+    public $sourcePath = '@bower/jquery-timeago/assets';
+    public $js = ['jquery.timeago.js'];
     public $depends = [
         'yii\web\JqueryAsset'
     ];
+
 }
