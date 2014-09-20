@@ -26,7 +26,7 @@ class TimeAgo extends Widget {
     public function init()
     {
         TimeAgoAsset::register($this->getView());
-        $this->getView()->registerJs('jQuery(".timeago").timeago();', 4, 'timeago');
+        $this->getView()->registerJs("jQuery('.{$this->options['class']}').timeago();", 4, 'timeago');
     }
 
     public function run()
