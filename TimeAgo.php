@@ -9,7 +9,7 @@
 namespace yii\timeago;
 
 use yii\helpers\Html;
-use yii\widgets\InputWidget;
+use yii\base\Widget;
 use yii\base\Formatter;
 use yii\helpers\ArrayHelper;
 
@@ -18,8 +18,7 @@ use yii\helpers\ArrayHelper;
  * @author Nghia Nguyen <yiidevelop@hotmail.com>
  * @since 2.0
  */
-class TimeAgo extends InputWidget
-{
+class TimeAgo extends Widget {
 
     public $options = ['class' => 'timeago'];
     public $timestamp;
