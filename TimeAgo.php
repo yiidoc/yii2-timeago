@@ -8,17 +8,18 @@
 
 namespace yii\timeago;
 
+use Yii;
 use yii\helpers\Html;
 use yii\base\Widget;
-use yii\base\Formatter;
 use yii\helpers\ArrayHelper;
 
 /**
- * 
+ *
  * @author Nghia Nguyen <yiidevelop@hotmail.com>
  * @since 2.0
  */
-class TimeAgo extends Widget {
+class TimeAgo extends Widget
+{
 
     public $options = ['class' => 'timeago'];
     public $timestamp;
@@ -32,8 +33,7 @@ class TimeAgo extends Widget {
     public function run()
     {
         if ($this->timestamp) {
-            $formatter = new Formatter;
-            echo Html::tag('time', $formatter->asDatetime($this->timestamp), ArrayHelper::merge($this->options, ['datetime' => $this->timestamp]));
+            echo Html::tag('time', Yii::$app->formatter->asDatetime($this->timestamp), ArrayHelper::merge($this->options, ['datetime' => $this->timestamp]));
         }
     }
 
