@@ -14,7 +14,7 @@ namespace yii\timeago;
  */
 class TimeAgoAsset extends \yii\web\AssetBundle {
 
-    public $sourcePath = '@bower/jquery-timeago/assets';
+    public $sourcePath = '@bower/jquery-timeago';
     public $js = ['jquery.timeago.js'];
     public $depends = [
         'yii\web\JqueryAsset'
