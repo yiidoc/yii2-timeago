@@ -31,6 +31,10 @@ class TimeAgo extends Widget
      */
     public $options;
     /**
+     * @var bool
+     */
+    public $localTitle = false;
+    /**
      * @var string
      * @see https://github.com/rmm5t/jquery-timeago/tree/master/locales
      */
@@ -47,6 +51,9 @@ class TimeAgo extends Widget
     {
         $this->options['data-toggle'] = ArrayHelper::getValue($this->options, 'data-toggle', 'timeago');
         $this->registerLocale();
+        if($this->localTitle) {
+            $this->getView()->registerJs("jQuery.timeago.settings.localeTitle = true", 4, 'timeagoSetting');
+        }
         $this->getView()->registerJs("jQuery('{$this->tag}[data-toggle=\"{$this->options['data-toggle']}\"]').timeago();", 4, 'timeago');
     }
 
@@ -78,8 +85,12 @@ class TimeAgo extends Widget
     public function run()
     {
         if ($this->timestamp) {
-            echo Html::tag($this->tag, Yii::$app->formatter->asDatetime($this->timestamp), ArrayHelper::merge($this->options, ['datetime' => Yii::$app->formatter->asDatetime($this->timestamp, "php:c")]));
+            echo Html::tag($this->tag,
+                Yii::$app->formatter->asDatetime($this->timestamp),
+                ArrayHelper::merge([
+                    'datetime' => Yii::$app->formatter->asDatetime($this->timestamp, "php:c")
+                ], $this->options)
+            );
         }
     }
-
 }
