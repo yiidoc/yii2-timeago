@@ -38,7 +38,7 @@ class TimeAgo extends Widget
      * @var string
      * @see https://github.com/rmm5t/jquery-timeago/tree/master/locales
      */
-    public $language = 'en';
+    public $language;
     /**
      * @var integer Unix timestamp
      */
@@ -49,6 +49,7 @@ class TimeAgo extends Widget
 
     public function init()
     {
+        if ($this->language === null) $this->language = substr(\Yii::$app->language,0,2);
         $this->options['data-toggle'] = ArrayHelper::getValue($this->options, 'data-toggle', 'timeago');
         $this->registerLocale();
         if($this->localTitle) {
